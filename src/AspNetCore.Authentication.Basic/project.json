@@ -1,0 +1,28 @@
+{
+	"version": "1.0.0-*",
+	"authors": [ "Alexander Fomin" ],
+	"description": "Basic authentication for ASP.NET Core",
+
+	"buildOptions": {
+		"warningsAsErrors": true,
+		"xmlDoc": true
+	},
+
+	"packOptions": {
+		"tags": [ "aspnetcore", "authentication", "basic" ],
+		"repository": {
+			"type": "git",
+			"url": "git://github.com/anfomin/aspnetcore.authentication.basic"
+		}
+	},
+
+	"dependencies": {
+		"Microsoft.AspNetCore.Authentication": "1.0.0-rc2-final",
+		"Microsoft.AspNetCore.Identity": "1.0.0-rc2-final"
+	},
+
+	"frameworks": {
+		"net451": { },
+		"netstandard1.3": { }
+	}
+}

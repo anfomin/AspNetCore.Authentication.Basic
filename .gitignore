@@ -1,0 +1,18 @@
+# Packages and build
+packages
+artifacts
+.vs
+.build
+bin
+obj
+
+# User-specific files
+*.suo
+*.user
+*.docstates
+*.ide
+*.lock.json
+
+# OS X temporary files
+.DS_Store
+._*
