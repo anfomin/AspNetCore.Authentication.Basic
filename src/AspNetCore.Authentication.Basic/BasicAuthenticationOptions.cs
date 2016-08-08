@@ -15,7 +15,7 @@ namespace Microsoft.AspNetCore.Builder
 		/// <summary>
 		/// Default authentication realm.
 		/// </summary>
-		public const string DefaultRealm = "app";
+		public const string DefaultRealm = "App";
 
 		/// <summary>
 		/// Gets or sets protection space name. Realms allow the protected resources on
@@ -37,6 +37,7 @@ namespace Microsoft.AspNetCore.Builder
 		public BasicAuthenticationOptions()
 		{
 			AutomaticAuthenticate = true;
+			AutomaticChallenge = true;
 			AuthenticationScheme = BasicAuthenticationScheme;
 		}
 	}

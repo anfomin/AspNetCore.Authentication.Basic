@@ -32,13 +32,6 @@ namespace AspNetCore.Authentication.Basic
 		public AuthenticationProperties Properties { get; private set; }
 
 		/// <summary>
-		/// Initializes new empty instance.
-		/// </summary>
-		protected BasicSignInResult()
-		{
-		}
-
-		/// <summary>
 		/// Creates success signin result.
 		/// </summary>
 		/// <param name="principal">Claims principal used for authentication.</param>

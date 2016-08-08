@@ -79,10 +79,10 @@ namespace AspNetCore.Authentication.Basic
 		}
 
 		/// <inheritdoc />
-		protected override Task<bool> HandleForbiddenAsync(ChallengeContext context)
+		protected override Task<bool> HandleUnauthorizedAsync(ChallengeContext context)
 		{
 			Response.Headers[WWWAuthenticateHeader] = $"{Options.AuthenticationScheme} realm=\"{Options.Realm}\"";
-			return base.HandleForbiddenAsync(context);
+			return base.HandleUnauthorizedAsync(context);
 		}
 	}
 }

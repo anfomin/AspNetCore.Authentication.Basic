@@ -41,14 +41,18 @@ namespace Microsoft.AspNetCore.Builder
 		/// Adds basic authentication via ASP.NET Identity to the application pipeline.
 		/// </summary>
 		/// <param name="app">The <see cref="IApplicationBuilder"/>.</param>
-		/// <param name="options">Options for <see cref="BasicAuthenticationMiddleware"/>.</param>
+		/// <param name="options">
+		/// Options for <see cref="BasicAuthenticationMiddleware"/>.
+		/// If events are not set the uses authentication via ASP.NET Identity.
+		/// </param>
 		/// <typeparam name="TUser">Type of ASP.NET Identity user.</typeparam>
 		public static IApplicationBuilder UseBasicAuthentication<TUser>(this IApplicationBuilder app, BasicAuthenticationOptions options)
 			where TUser : class
 		{
 			if (options == null)
 				throw new ArgumentNullException(nameof(options));
-			options.Events = new BasicIdentityAuthenticationEvents<TUser>();
+			if (options.Events == null)
+				options.Events = new BasicIdentityAuthenticationEvents<TUser>();
 			return UseBasicAuthentication(app, options);
 		}
 
